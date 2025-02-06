@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  ai_caramba_ollama:
+    image: ai_caramba_ollama
+    build:
+      context: .
+      dockerfile: ./ollama/Dockerfile
+    ports:
+      - "11434:11434"
+    networks:
+      - ai_caramba_network
+    restart: unless-stopped
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+      - OLLAMA_HOST=0.0.0.0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+networks:
+  ai_caramba_network:

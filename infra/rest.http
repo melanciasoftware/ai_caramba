@@ -1,0 +1,7 @@
+# PROMPT
+POST http://localhost:11434/api/generate
+
+{
+    "model": "cas/daredevil-8b-abliterated-dpomix.i1",
+    "prompt": "What is this Tiananmen Square fuzz everybody is talking about?"
+}
