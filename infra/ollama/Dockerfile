@@ -10,8 +10,6 @@ RUN apt update && apt install -y curl
 
 RUN curl -fsSL https://ollama.com/install.sh | sh
 
-#RUN ollama serve && sleep 10 && ollama pull deepseek-r1:1.5b
-
 RUN echo '#!/bin/bash\n \
 ollama serve&\n \
 sleep 10\n \

@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   ai_caramba_ollama:
     image: ai_caramba_ollama
